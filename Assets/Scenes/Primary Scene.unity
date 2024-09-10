@@ -7759,8 +7759,8 @@ Transform:
   m_GameObject: {fileID: 2855864114370994308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.14, y: 0, z: 34.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 9.7463, y: -0.040533, z: 5.3066}
+  m_LocalScale: {x: 0.34573683, y: 1.0421, z: 0.155857}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652640295113}
@@ -8421,8 +8421,8 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000010728836, y: -0.18136266, z: 0.008082114}
     m_Extent: {x: 1.1138259, y: 1.0744939, z: 0.2430959}
   m_DirtyAABB: 0
---- !u!64 &4945611424286256107
-MeshCollider:
+--- !u!136 &4945611424286256107
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8438,11 +8438,12 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -371481341812892972, guid: 37be4a74aa6c3a249ad786c9cd2a4391, type: 3}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2
+  m_Height: 2.1
+  m_Direction: 1
+  m_Center: {x: -28.15, y: 1, z: -34}
 --- !u!4 &5048025442429457268
 Transform:
   m_ObjectHideFlags: 0
@@ -9270,7 +9271,8 @@ MonoBehaviour:
   playerTransform: {fileID: 2045159281877094780}
   bulletPrefab: {fileID: 1231614812322653505, guid: 42012750b4bfdd443a4d93137c145d42, type: 3}
   firePoint: {fileID: 4023077952222062350}
-  ammoCount: 5000
+  MaxAmmo: 0
+  ammoCount: 100
   bulletForce: 25
 --- !u!4 &7666680084844852074
 Transform:
