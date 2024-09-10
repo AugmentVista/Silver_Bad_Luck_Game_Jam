@@ -55,7 +55,7 @@ public class ZombieAI : MonoBehaviour
         lastAttackTime = Time.time;
         //player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
 
-        Debug.Log("Zombie attacked the player for " + attackDamage + " damage.");
+        //Debug.Log("Zombie attacked the player for " + attackDamage + " damage.");
 
         isAttacking = false;
     }

@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damageAmount = 10f; // Damage amount for the bullet
+    public float damageAmount;
 
     private void OnCollisionEnter(Collision collision)
     {
-        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        DamageInterface damageable = collision.gameObject.GetComponent<DamageInterface>();
+        if (damageable != null)
         {
-            enemyHealth.TakeDamage(damageAmount);
+            damageable.TakeDamage(damageAmount);
         }
 
-        // Optionally destroy the bullet after collision
-        Destroy(gameObject);
+        Destroy(gameObject, 15f);
     }
 
     public void SetDamage(float damage)

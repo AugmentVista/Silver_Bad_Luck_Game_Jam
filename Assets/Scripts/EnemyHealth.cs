@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, DamageInterface
 {
-    public float maxHealth = 100f; 
+    public float maxHealth;
     private float currentHealth;
 
-    void Start()
+    private void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= amount;
+        currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            Die(); 
+            Die();
         }
     }
 
-    void Die()
+    private void Die()
     {
+        // Handle the enemy's death (e.g., play animation, destroy object)
         Destroy(gameObject);
     }
 }
