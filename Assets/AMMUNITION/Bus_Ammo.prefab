@@ -447,8 +447,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4687498163355285758}
   - component: {fileID: 5352112619491041861}
+  - component: {fileID: -6089125690764911377}
   m_Layer: 0
-  m_Name: 7_Ammo
+  m_Name: Bus_Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +465,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3078170771361889280}
@@ -480,7 +481,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5352112619491041860}
   serializedVersion: 4
-  m_Mass: 56
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -499,6 +500,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6089125690764911377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352112619491041860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418bb16528923ce49b08b90cf2d9448b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 200
 --- !u!1 &5569638304846667585
 GameObject:
   m_ObjectHideFlags: 0

@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 4194243780939094177}
   - component: {fileID: 6265630697890717732}
   m_Layer: 0
-  m_Name: 6_Ammo
+  m_Name: Chicken_Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,4 +1070,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418bb16528923ce49b08b90cf2d9448b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
+  damageAmount: 10
