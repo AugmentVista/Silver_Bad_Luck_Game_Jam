@@ -16,10 +16,13 @@ public class ZombieAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        if (navMeshAgent == null) { Debug.Log("NavMesh not found"); }
+        
     }
 
     void Update()
     {
+        if (navMeshAgent == null) { Debug.Log("NavMesh not found"); }
         if (player == null) return;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -53,9 +56,6 @@ public class ZombieAI : MonoBehaviour
     {
         isAttacking = true;
         lastAttackTime = Time.time;
-        //player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
-
-        //Debug.Log("Zombie attacked the player for " + attackDamage + " damage.");
 
         isAttacking = false;
     }
