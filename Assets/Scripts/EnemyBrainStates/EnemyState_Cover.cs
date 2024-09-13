@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyState_Cover : IState
 {
@@ -11,7 +12,22 @@ public class EnemyState_Cover : IState
     { 
         this.enemyReferences = enemyReferences;
 
-        // TODO: add Another state machine
+        stateMachine = new StateMachine();
+
+        // STATES
+        var enemyShoot = new EnemyState_Shoot(enemyReferences);
+        var enemyDelay = new EnemyState_Delay(1f);
+
+        // TRANSITIONS
+        At(enemyShoot, enemyDelay, () => !enemyDelay.IsDone());
+        At(enemyDelay, enemyShoot, () => enemyDelay.IsDone());
+
+        //START STATE
+        stateMachine.SetState(enemyShoot);
+
+        // FUNCTIONS & CONDITIONS
+        void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
+        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
     }
 
     public void OnEnter()
@@ -26,7 +42,7 @@ public class EnemyState_Cover : IState
 
     public void Tick()
     { 
-    
+        stateMachine.Tick();
     }
 
 }

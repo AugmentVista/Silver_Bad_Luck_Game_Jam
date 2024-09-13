@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyState_RuntToCover : IState
 {
@@ -17,6 +18,7 @@ public class EnemyState_RuntToCover : IState
     {
         Cover nextCover = this.coverArea.GetRandomCover(enemyReferences.transform.position);
         enemyReferences.navMeshAgent.SetDestination(nextCover.transform.position);
+        enemyReferences.animator.SetFloat("speed", 1f);
     }
 
     public void OnExit()
