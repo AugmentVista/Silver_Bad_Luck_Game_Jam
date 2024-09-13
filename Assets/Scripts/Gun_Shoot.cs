@@ -10,11 +10,12 @@ public class Gun_Shoot : MonoBehaviour
     public int ammoCount;
     public float fireRate;
     public int luckModifier;
+    public int timeSpentOverheated;
     public bool gunIsOverheated;
 
     private float force;
     private bool canFireAgain;
-    // Public references for different ammo types
+
     public GameObject bulletAmmo;
     public GameObject pillowAmmo;
     public GameObject chickenAmmo;
@@ -105,7 +106,6 @@ public class Gun_Shoot : MonoBehaviour
         if (ammoToFire != null && !gunIsOverheated)
         {
             ShootBullet(ammoToFire, force);
-            Debug.Log(ammoToFire);
         }
         else if (ammoToFire == Overheated)
         {
@@ -116,7 +116,7 @@ public class Gun_Shoot : MonoBehaviour
             IEnumerator OverheatCoroutine()
             {
                 Debug.Log("Started Coroutine at timestamp : " + Time.time);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(timeSpentOverheated);
                 Debug.Log("Finished Coroutine at timestamp : " + Time.time);
                 luckModifier++;
                 gunIsOverheated = false;
